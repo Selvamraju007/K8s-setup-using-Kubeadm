@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# INSTALLING KUBERNETES VERSION 1.26
+# INSTALLING KUBERNETES VERSION
 
 apt-get update && apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
@@ -8,7 +8,7 @@ cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update
-apt-get install -y kubelet=1.26.0-00 kubeadm=1.26.0-00  kubectl=1.26.0-00 
+apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
 #INSTALLING AND CONFIGURING DOCKER
